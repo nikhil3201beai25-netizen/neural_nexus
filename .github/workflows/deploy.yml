@@ -36,8 +36,13 @@ jobs:
       - name: Build production bundle
         run: npm run build
 
+      - name: Copy presentation to dist
+        run: cp presentation.html dist/presentation.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
