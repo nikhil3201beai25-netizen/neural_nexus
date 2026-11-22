@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriConnect - Presentation Deck</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background-color: #0b0d0e;
+      margin: 0;
+      padding: 0;
+    }
+    .slide-container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .slide {
+      width: 1280px;
+      height: 720px;
+      aspect-ratio: 16 / 9;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      border-radius: 8px;
+    }
+    @media print {
+      body { background: transparent; }
+      .slide-container { height: auto; page-break-after: always; padding: 0; }
+      .slide { box-shadow: none; border-radius: 0; width: 100%; height: 100vh; }
+      .nav-controls { display: none !important; }
+    }
+  </style>
+</head>
+<body class="text-slate-900 select-none">
+
+  <!-- Fixed Navigation Bar -->
+  <div class="nav-controls fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 flex items-center gap-3 bg-slate-900/90 backdrop-blur-md px-5 py-2.5 rounded-full border border-slate-700 shadow-2xl text-white text-xs font-bold">
+    <button onclick="prevSlide()" class="hover:text-emerald-400 transition">← Prev</button>
+    <span id="slideIndicator" class="text-slate-400">1 / 8</span>
+    <button onclick="nextSlide()" class="hover:text-emerald-400 transition">Next →</button>
+    <span class="text-slate-600">|</span>
+    <button onclick="window.print()" class="text-emerald-400 hover:text-emerald-300">Save as PDF</button>
+  </div>
+
+  <div class="slide-container">
+    
+    <!-- SLIDE 1: Cover (Dark theme) -->
+    <div id="slide-1" class="slide bg-[#121517] text-white flex flex-col justify-between p-20">
+      <div>
+        <p class="text-[#4ade80] text-xs font-black tracking-widest uppercase mb-8">
+          THE BUILDER'S THEORY 1.0 • HACKERS CULT × NEXERA
+        </p>
+        <h1 class="text-7xl font-black tracking-tight leading-none text-white mb-6">
+          AgriConnect
+        </h1>
+        <p class="text-slate-300 text-lg max-w-2xl leading-relaxed font-normal">
+          Centralized platform matching regional climate and seasons with certified seeds, fertilizers, and agricultural equipment across India.
+        </p>
+        <div class="w-16 h-1 bg-[#4ade80] mt-10 mb-8 rounded-full"></div>
+      </div>
+
+      <div>
+        <p class="text-[#4ade80] text-xs font-black tracking-wider uppercase mb-1">
+          TEAM AGRICONNECT
+        </p>
+        <p class="text-slate-400 text-sm font-semibold">
+          Nikhil • Vanshika • Parneet • Maan • Yash
+        </p>
+      </div>
+    </div>
+
+    <!-- SLIDE 2: The Problem (Light theme) -->
+    <div id="slide-2" class="slide bg-[#f8fafc] text-slate-900 p-16 flex flex-col justify-between hidden">
+      <div>
+        <div class="flex items-baseline gap-3 mb-2">
+          <span class="text-[#4ade80] text-2xl font-black">02</span>
+          <h2 class="text-3xl font-black tracking-tight text-slate-900">The Problem</h2>
+        </div>
+        <p class="text-slate-500 text-sm max-w-3xl mb-12">
+          No centralized platform connects seasonal climate realities with verified agricultural inputs, stalling farmer prosperity and practical yield impact.
+        </p>
+
+        <div class="grid grid-cols-3 gap-6">
+          <div class="bg-white p-7 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col justify-between h-64">
+            <div class="w-10 h-10 rounded-xl bg-[#f0fdf4] text-[#16a34a] flex items-center justify-center text-xl">
+              🌾
+            </div>
+            <div>
+              <h3 class="text-lg font-black text-slate-900 mb-2">The Core Problem</h3>
+              <p class="text-slate-500 text-xs leading-relaxed">
+                Fragmented agro-climatic guidance and unaddressed regional soil vulnerabilities lead to frequent crop failures.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-white p-7 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col justify-between h-64">
+            <div class="w-10 h-10 rounded-xl bg-[#f0fdf4] text-[#16a34a] flex items-center justify-center text-xl">
+              👥
+            </div>
+            <div>
+              <h3 class="text-lg font-black text-slate-900 mb-2">Who Is Affected</h3>
+              <p class="text-slate-500 text-xs leading-relaxed">
+                Over 140 million smallholder farmers, rural FPOs, and village panchayat communities across North, South, West & East India.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-white p-7 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col justify-between h-64">
+            <div class="w-10 h-10 rounded-xl bg-[#f0fdf4] text-[#16a34a] flex items-center justify-center text-xl">
+              📦
+            </div>
+            <div>
+              <h3 class="text-lg font-black text-slate-900 mb-2">Why Options Fall Short</h3>
+              <p class="text-slate-500 text-xs leading-relaxed">
+                Generic state advisories ignore micro-climates; duplicate inputs and non-subsidized middlemen inflate costs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div></div>
+    </div>
+
+    <!-- SLIDE 3: The Solution (Light theme) -->
+    <div id="slide-3" class="slide bg-[#f8fafc] text-slate-900 p-16 flex flex-col justify-between hidden">
+      <div>
+        <div class="flex items-baseline gap-3 mb-10">
+          <span class="text-[#4ade80] text-2xl font-black">03</span>
+          <h2 class="text-3xl font-black tracking-tight text-slate-900">The Solution</h2>
+        </div>
+
+        <div class="grid grid-cols-12 gap-8 items-center">
+          <div class="col-span-5 bg-[#f0fdf4] border border-[#bbf7d0] p-9 rounded-2xl h-80 flex flex-col justify-center">
+            <p class="text-[#16a34a] text-[10px] font-black uppercase tracking-wider mb-2">THE CORE ENGINE</p>
+            <h3 class="text-2xl font-black text-slate-900 leading-snug mb-3">
+              End-to-End Smart Agri Ecosystem
+            </h3>
+            <p class="text-slate-600 text-xs leading-relaxed">
+              Connects seasonal climate predictions with verified seeds, fertilizers, and subsidized equipment for measurable farmer ROI.
+            </p>
+          </div>
+
+          <div class="col-span-7 space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-[#f0fdf4] text-[#16a34a] border border-[#bbf7d0] flex items-center justify-center text-base shrink-0">
+                🌱
+              </div>
+              <div>
+                <h4 class="text-base font-black text-slate-900">Smart Climate Matching</h4>
+                <p class="text-slate-500 text-xs mt-0.5">
+                  Pairs regional temperature, rainfall, and soil with best-fit high-yield crop varieties.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-[#f0fdf4] text-[#16a34a] border border-[#bbf7d0] flex items-center justify-center text-base shrink-0">
+                🛡️
+              </div>
+              <div>
+                <h4 class="text-base font-black text-slate-900">Certified Subsidized Store</h4>
+                <p class="text-slate-500 text-xs mt-0.5">
+                  100% NSC/ICAR certified seeds and 40-50% SMAM subsidized small implements.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-[#f0fdf4] text-[#16a34a] border border-[#bbf7d0] flex items-center justify-center text-base shrink-0">
+                📈
+              </div>
+              <div>
+                <h4 class="text-base font-black text-slate-900">Precision Soil & Weather Guard</h4>
+                <p class="text-slate-500 text-xs mt-0.5">
+                  Real-time NPK bag calculator, 7-day weather pest warnings, and 24x7 Kisan Call Centre.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div></div>
+    </div>
+
+    <!-- SLIDE 4: How It Works (Light theme) -->
+    <div id="slide-4" class="slide bg-[#f8fafc] text-slate-900 p-16 flex flex-col justify-between hidden">
+      <div>
+        <div class="flex items-baseline gap-3 mb-2">
+          <span class="text-[#4ade80] text-2xl font-black">04</span>
+          <h2 class="text-3xl font-black tracking-tight text-slate-900">How It Works</h2>
+        </div>
+        <p class="text-slate-500 text-sm max-w-3xl mb-12">
+          End-to-end system flow connecting farmers to verified agricultural prosperity.
+        </p>
+
+        <div class="grid grid-cols-4 gap-4 items-center">
+          <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm h-64 flex flex-col justify-between relative">
+            <span class="text-[10px] font-black uppercase text-[#16a34a]">01 • INPUT</span>
+            <div>
+              <h3 class="text-base font-black text-slate-900 mb-2">Zone & Land Profile</h3>
+              <p class="text-slate-500 text-xs leading-relaxed">
+                Farmer selects Indian zone (North/South/West/East), state, soil type, and cropping season.
+              </p>
+            </div>
+            <div class="text-[#4ade80] text-xl font-bold self-end absolute -right-3 top-1/2 transform -translate-y-1/2 z-10 hidden lg:block">→</div>
+          </div>
+
+          <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm h-64 flex flex-col justify-between relative">
+            <span class="text-[10px] font-black uppercase text-[#16a34a]">02 • PROCESS</span>
+            <div>
+              <h3 class="text-base font-black text-slate-900 mb-2">Climate Matching</h3>
+              <p class="text-slate-500 text-xs leading-relaxed">
+                System recommends high-yield hybrid varieties and sowing/harvesting calendar windows.
+              </p>
+            </div>
+            <div class="text-[#4ade80] text-xl font-bold self-end absolute -right-3 top-1/2 transform -translate-y-1/2 z-10 hidden lg:block">→</div>
+          </div>
+
+          <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm h-64 flex flex-col justify-between relative">
+            <span class="text-[10px] font-black uppercase text-[#16a34a]">03 • CORE LOGIC</span>
+            <div>
+              <h3 class="text-base font-black text-slate-900 mb-2">Precise Input Sizing</h3>
+              <p class="text-slate-500 text-xs leading-relaxed">
+                Calculates exact commercial NPK bags and suggests compatible subsidized tools.
+              </p>
+            </div>
+            <div class="text-[#4ade80] text-xl font-bold self-end absolute -right-3 top-1/2 transform -translate-y-1/2 z-10 hidden lg:block">→</div>
+          </div>
+
+          <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm h-64 flex flex-col justify-between">
+            <span class="text-[10px] font-black uppercase text-[#16a34a]">04 • OUTPUT</span>
+            <div>
+              <h3 class="text-base font-black text-slate-900 mb-2">Doorstep Delivery</h3>
+              <p class="text-slate-500 text-xs leading-relaxed">
+                Direct village Gram Panchayat dispatch with Cash on Delivery and KCC financing.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div></div>
+    </div>
+
+    <!-- SLIDE 5: Business Model & Value (Light theme) -->
+    <div id="slide-5" class="slide bg-[#f8fafc] text-slate-900 p-16 flex flex-col justify-between hidden">
+      <div>
+        <div class="flex items-baseline gap-3 mb-10">
+          <span class="text-[#4ade80] text-2xl font-black">05</span>
+          <h2 class="text-3xl font-black tracking-tight text-slate-900">Business Model & Value</h2>
+        </div>
+
+        <div class="grid grid-cols-12 gap-8 items-center">
+          <div class="col-span-5 space-y-8 pr-4">
+            <div>
+              <p class="text-[#16a34a] text-[10px] font-black uppercase tracking-wider mb-1">01 • PRIMARY USERS</p>
+              <h3 class="text-xl font-black text-slate-900 mb-2">Two-Sided Rural Ecosystem</h3>
+              <p class="text-slate-500 text-xs leading-relaxed">
+                Smallholder farmers access certified inputs and advisory; seed producers and implement makers reach village clusters directly.
+              </p>
+            </div>
+
+            <div>
+              <p class="text-[#16a34a] text-[10px] font-black uppercase tracking-wider mb-1">02 • PRACTICAL USE CASE</p>
+              <h3 class="text-xl font-black text-slate-900 mb-2">Punjab & Nashik Farm Pilots</h3>
+              <p class="text-slate-500 text-xs leading-relaxed">
+                Farmer selects HD-3086 seed, sizes precise DAP/Urea bags, and claims 40% SMAM equipment subsidy.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-span-7 bg-[#f0fdf4] border border-[#bbf7d0] p-9 rounded-2xl">
+            <p class="text-[#16a34a] text-[10px] font-black uppercase tracking-wider mb-2">03 • VALUE CREATED & SUSTAINABILITY</p>
+            <h3 class="text-2xl font-black text-slate-900 mb-4">Measurable Agricultural ROI</h3>
+            
+            <div class="space-y-3 text-xs">
+              <p class="text-slate-700">
+                <strong class="text-slate-900">Zero Middleman Markup:</strong> Direct supply chain cuts farmer input costs by 15-20%.
+              </p>
+              <p class="text-slate-700">
+                <strong class="text-slate-900">30-40% Yield Boost:</strong> Scientific variety selection prevents catastrophic seasonal failures.
+              </p>
+              <p class="text-slate-700">
+                <strong class="text-slate-900">B2B & FPO Partnerships:</strong> Monetizes bulk procurement commissions and equipment rentals.
+              </p>
+              <p class="text-slate-700">
+                <strong class="text-slate-900">Govt Scheme Enablement:</strong> Facilitates SMAM subsidies and KCC concessional credit.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div></div>
+    </div>
+
+    <!-- SLIDE 6: Tech Stack (Light theme) -->
+    <div id="slide-6" class="slide bg-[#f8fafc] text-slate-900 p-16 flex flex-col justify-between hidden">
+      <div>
+        <div class="flex items-baseline gap-3 mb-2">
+          <span class="text-[#4ade80] text-2xl font-black">06</span>
+          <h2 class="text-3xl font-black tracking-tight text-slate-900">Tech Stack</h2>
+        </div>
+        <p class="text-slate-500 text-sm max-w-3xl mb-12">
+          Factual, rapid-deployment architecture powering the AgriConnect platform.
+        </p>
+
+        <div class="grid grid-cols-4 gap-4">
+          <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm h-64 flex flex-col justify-between">
+            <div class="text-[#16a34a] text-xl font-bold font-mono">&lt;/&gt;</div>
+            <div>
+              <p class="text-[9px] font-black uppercase text-[#16a34a] mb-1">FRONTEND</p>
+              <h3 class="text-base font-black text-slate-900 mb-2">React 18 + Tailwind</h3>
+              <p class="text-slate-500 text-xs leading-relaxed">
+                Fast, responsive bilingual UI with English and Hindi transliteration.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm h-64 flex flex-col justify-between">
+            <div class="text-[#16a34a] text-xl">🗄️</div>
+            <div>
+              <p class="text-[9px] font-black uppercase text-[#16a34a] mb-1">BACKEND</p>
+              <h3 class="text-base font-black text-slate-900 mb-2">Node.js + Vite</h3>
+              <p class="text-slate-500 text-xs leading-relaxed">
+                High-performance modular runtime, persistent cart, and local storage.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm h-64 flex flex-col justify-between">
+            <div class="text-[#16a34a] text-xl">🧠</div>
+            <div>
+              <p class="text-[9px] font-black uppercase text-[#16a34a] mb-1">AGRONOMY ENGINE</p>
+              <h3 class="text-base font-black text-slate-900 mb-2">Zone Heuristic Logic</h3>
+              <p class="text-slate-500 text-xs leading-relaxed">
+                4-zone Indian datasets, crop phenology, and NPK mathematical formulas.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm h-64 flex flex-col justify-between">
+            <div class="text-[#16a34a] text-xl">🛡️</div>
+            <div>
+              <p class="text-[9px] font-black uppercase text-[#16a34a] mb-1">AUTHENTICATION</p>
+              <h3 class="text-base font-black text-slate-900 mb-2">Mobile OTP + KCC</h3>
+              <p class="text-slate-500 text-xs leading-relaxed">
+                Frictionless 4-digit SMS OTP, Aadhaar/KCC scheme verification, and WhatsApp.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div></div>
+    </div>
+
+    <!-- SLIDE 7: The Rollout Plan (Light theme) -->
+    <div id="slide-7" class="slide bg-[#f8fafc] text-slate-900 p-16 flex flex-col justify-between hidden">
+      <div>
+        <div class="flex items-baseline gap-3 mb-2">
+          <span class="text-[#4ade80] text-2xl font-black">07</span>
+          <h2 class="text-3xl font-black tracking-tight text-slate-900">The Rollout Plan</h2>
+        </div>
+        <p class="text-slate-500 text-sm max-w-3xl mb-12">
+          Credible roadmap from verified prototype to multi-state rural adoption.
+        </p>
+
+        <div class="grid grid-cols-3 gap-6">
+          <div class="bg-[#f0fdf4] border border-[#bbf7d0] p-7 rounded-2xl h-64 flex flex-col justify-between">
+            <span class="text-[10px] font-black uppercase text-[#16a34a]">01 • NOW</span>
+            <div>
+              <h3 class="text-lg font-black text-slate-900 mb-2">Build & Validate</h3>
+              <p class="text-slate-600 text-xs leading-relaxed">
+                Complete working prototype with North, South, West & East zones, certified store, and NPK calculator.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-white border border-slate-200/80 p-7 rounded-2xl shadow-sm h-64 flex flex-col justify-between">
+            <span class="text-[10px] font-black uppercase text-[#16a34a]">02 • NEXT</span>
+            <div>
+              <h3 class="text-lg font-black text-slate-900 mb-2">Regional District Pilot</h3>
+              <p class="text-slate-500 text-xs leading-relaxed">
+                Onboard 500+ farmers and 10 village FPOs across Punjab and Maharashtra.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-white border border-slate-200/80 p-7 rounded-2xl shadow-sm h-64 flex flex-col justify-between">
+            <span class="text-[10px] font-black uppercase text-[#16a34a]">03 • THEN</span>
+            <div>
+              <h3 class="text-lg font-black text-slate-900 mb-2">Scale & Subsidies</h3>
+              <p class="text-slate-500 text-xs leading-relaxed">
+                Full integration with SMAM portal and state agricultural universities (KVKs).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div></div>
+    </div>
+
+    <!-- SLIDE 8: Demo & Closing (Dark theme) -->
+    <div id="slide-8" class="slide bg-[#121517] text-white p-16 flex flex-col justify-between hidden">
+      <div>
+        <div class="flex items-baseline gap-3 mb-2">
+          <span class="text-[#4ade80] text-2xl font-black">08</span>
+          <h2 class="text-3xl font-black tracking-tight text-white">Pre-Loaded Demo Features</h2>
+        </div>
+        <p class="text-slate-400 text-sm max-w-3xl mb-8">
+          5 real-world modules ready for live demonstration on AgriConnect.
+        </p>
+
+        <div class="space-y-4 max-w-3xl text-sm">
+          <p class="text-slate-300">
+            <span class="text-[#4ade80] font-black">01</span> <strong class="text-white">4-Zone Climate Crop Recommender:</strong> Tailored Kharif, Rabi & Zaid crop advice for North, South, West & East India.
+          </p>
+          <p class="text-slate-300">
+            <span class="text-[#4ade80] font-black">02</span> <strong class="text-white">Certified Input Store:</strong> High-germination seeds, nano fertilizers, sprayers & planters with SMAM subsidy tags.
+          </p>
+          <p class="text-slate-300">
+            <span class="text-[#4ade80] font-black">03</span> <strong class="text-white">Precision Soil NPK Calculator:</strong> Calculates exact commercial bags of Urea, DAP, MOP & Zinc with 3-stage split schedules.
+          </p>
+          <p class="text-slate-300">
+            <span class="text-[#4ade80] font-black">04</span> <strong class="text-white">7-Day Weather & Pest Advisory:</strong> Live agro-meteorological bulletins with Aphid, Late Blight & BPH alerts.
+          </p>
+          <p class="text-slate-300">
+            <span class="text-[#4ade80] font-black">05</span> <strong class="text-white">Kisan Authentication & Support:</strong> Mobile OTP login, KCC profile sync, and Toll-Free 1800-180-1551 helpline desk.
+          </p>
+        </div>
+      </div>
+
+      <p class="text-[#4ade80] text-xs font-black tracking-widest uppercase">
+        THANK YOU • READY FOR LIVE DEMO & Q&amp;A
+      </p>
+    </div>
+
+  </div>
+
+  <script>
+    let currentSlide = 1;
+    const totalSlides = 8;
+
+    function showSlide(n) {
+      for (let i = 1; i <= totalSlides; i++) {
+        const el = document.getElementById(`slide-${i}`);
+        if (el) el.classList.add('hidden');
+      }
+      const active = document.getElementById(`slide-${n}`);
+      if (active) active.classList.remove('hidden');
+      document.getElementById('slideIndicator').innerText = `${n} / ${totalSlides}`;
+      currentSlide = n;
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides) {
+        showSlide(currentSlide + 1);
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 1) {
+        showSlide(currentSlide - 1);
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+        nextSlide();
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        prevSlide();
+      }
+    });
+  </script>
+</body>
+</html>
